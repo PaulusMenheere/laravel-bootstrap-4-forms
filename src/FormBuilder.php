@@ -240,6 +240,13 @@ class FormBuilder {
      */
     private $_suffix;
 
+    /**
+     * Errorbag name
+     *
+     * @var string
+     */
+    private $_errorbag = 'default';
+
     public function __construct()
     {
         $this->_resetFlags();
@@ -1025,7 +1032,7 @@ class FormBuilder {
 
 	    $this->_resetFlags();
 
-	    return $formGroupOpen . $label . $inputGroupOpen . $prefix . $field . $suffix . $inputGroupClose . $help . $error . $formGroupClose;
+	    return $formGroupOpen . $label . $inputGroupOpen . $prefix . $field . $suffix  . $help . $error . $inputGroupClose . $formGroupClose;
     }
 
     /**
@@ -1038,10 +1045,11 @@ class FormBuilder {
     private function _getValidationFieldMessage(string $prefix = '<div class="invalid-feedback">', string $sufix = '</div>')
     {
         $errors = session('errors');
-        if (!$errors) {
+        if (!$errors || !$errors->hasBag($this->_errorbag)) {
             return null;
         }
-        $error = $errors->first($this->_name);
+
+        $error = $errors->getBag($this->_errorbag)->first($this->_name);
 
         if (!$error) {
             return null;
