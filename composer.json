@@ -1,7 +1,7 @@
 {
-    "name": "netojose/laravel-bootstrap-4-forms",
+    "name": "paulmenheere/laravel-bootstrap-4-forms",
     "type": "package",
-    "description": "Bootstrap 4 form builder for Laravel 5",
+    "description": "Bootstrap 4 form builder for Laravel 5 Forked for development speedup",
     "keywords": [
         "laravel",
         "bootstrap",
@@ -16,11 +16,21 @@
         {
             "name": "José Sousa",
             "email": "sputinykster@gmail.com"
+        },
+        {
+            "name": "Paul Menheere",
+            "email" : "paul@pm-consultancy.nl"
         }
     ],
     "version": "2.0.6",
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.5",
+        "mockery/mockery": "^1.1"
+    },
     "autoload": {
         "psr-4": {
             "NetoJose\\Bootstrap4Forms\\": "src/"
