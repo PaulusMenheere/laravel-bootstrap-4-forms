@@ -866,6 +866,17 @@ class FormService {
     }
 
     /**
+     * Changes the Errorbag from default
+     *
+     * @param  string  $name
+     * @return \NetoJose\Bootstrap4Forms\FormService
+     */
+    public function errorbag(string $name = 'Default'): FormService
+    {
+        return $this->_set('errorbag', $name);
+    }
+
+    /**
      * Set a form builder attribute
      *
      * @param string $attr
