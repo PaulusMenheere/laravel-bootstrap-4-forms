@@ -22,7 +22,7 @@
             "email" : "paul@pm-consultancy.nl"
         }
     ],
-    "version": "2.0.7",
+    "version": "2.0.9",
     "minimum-stability": "dev",
     "require": {
         "php": "^7.1"

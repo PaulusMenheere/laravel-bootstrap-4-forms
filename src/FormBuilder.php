@@ -2,6 +2,8 @@
 
 namespace NetoJose\Bootstrap4Forms;
 
+use Illuminate\Support\Str;
+
 class FormBuilder {
 
     /**
@@ -845,7 +847,7 @@ class FormBuilder {
         if (!$id && $this->_name) {
             $id = $this->_name;
             if ($this->_type === 'radio') {
-                $id .= '-' . str_slug($this->_meta['value']);
+                $id .= '-' . Str::slug($this->_meta['value']);
             }
         }
 
