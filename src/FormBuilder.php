@@ -810,10 +810,10 @@ class FormBuilder {
      */
     private function _getValue()
     {
-        $name = $this->_name;
+        $name = $this->_transformToDotSyntax($this->_name);
 
         if ($this->_hasOldInput()) {
-            return old($this->_transformToDotSyntax($name));
+            return old($name);
         }
 
         if ($this->_value !== null) {

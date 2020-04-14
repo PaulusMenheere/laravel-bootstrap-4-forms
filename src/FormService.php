@@ -2,6 +2,8 @@
 
 namespace NetoJose\Bootstrap4Forms;
 
+use Illuminate\Support\Arr;
+
 /**
  * FormService class
  *
@@ -177,7 +179,7 @@ class FormService {
             $data = [];
         }
 
-        return $this->_set('Fdata', $data);
+        return $this->_set('Fdata', Arr::dot($data));
     }
 
     /**
